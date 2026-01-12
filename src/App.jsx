@@ -219,8 +219,6 @@ const LogoPlaceholder = ({ size = "large" }) => {
       <img 
         src="/logo.jpg" 
         alt="Logo Método PF"
-        // 'object-cover' asegura que llene todo el círculo (recortando bordes si es necesario)
-        // 'block' elimina espacios fantasma inline
         className="w-full h-full object-cover block" 
       />
     </div>
@@ -1256,7 +1254,7 @@ const DashboardView = ({ patientName, activeWeekIndex, setActiveWeekIndex, weeks
 
                             <button onClick={() => openModal(obj.text, 'yes')} className="flex-1 py-4 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center gap-2 font-bold text-xs hover:bg-emerald-100 transition-all active:scale-95 shadow-sm border border-emerald-100">
 
-                                <Icons.Check size={18}/> Sí
+                                <Icons.Check size={18}/> Sí lo hice
 
                             </button>
 
