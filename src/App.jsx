@@ -12,6 +12,10 @@ import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot, writeBatch, 
 
 // 1. CONFIGURACIÓN E INICIALIZACIÓN
 
+// ==========================================
+
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyBvMEE3mfEFSFwhnFZwjdM_gtWnedH6KoM",
   authDomain: "metodo-pf.firebaseapp.com",
@@ -20,6 +24,7 @@ const firebaseConfig = {
   messagingSenderId: "1044522703006",
   appId: "1:1044522703006:web:55939a76f3f73d38e7838f"
 };
+
 
 const app = initializeApp(firebaseConfig);
 
@@ -200,37 +205,27 @@ const Icons = {
 
 
 const LogoPlaceholder = ({ size = "large" }) => {
-
   const isLarge = size === "large";
-
   const containerSize = isLarge ? "w-28 h-28" : "w-10 h-10";
 
-  const iconSize = isLarge ? 28 : 14;
-
   return (
-
-    <div className={`${containerSize} rounded-full flex flex-col items-center justify-center relative shadow-sm overflow-hidden border-2 mx-auto`} style={{ backgroundColor: BRAND.accentLight, borderColor: BRAND.bgCard }}>
-
-      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `radial-gradient(circle, ${BRAND.primary} 10%, transparent 10%)`, backgroundSize: '10px 10px' }}></div>
-
-      <div className="flex flex-col items-center justify-center z-10 relative" style={{ top: isLarge ? '1px' : '0' }}>
-
-        <Icons.Leaf width={iconSize} height={iconSize} stroke={BRAND.primary} strokeWidth={1.5} className="mb-0.5 opacity-60" />
-
-        {isLarge && (
-
-          <span className="font-serif font-medium text-3xl tracking-tight leading-none" style={{ color: BRAND.textMain }}>PF</span>
-
-        )}
-
-      </div>
-
+    <div 
+      // Eliminamos 'flex', 'items-center', 'justify-center' para dejar que la imagen ocupe todo naturalmente
+      className={`${containerSize} rounded-full relative overflow-hidden mx-auto bg-white`} 
+      style={{ 
+        boxShadow: '0 10px 25px -5px rgba(192, 133, 125, 0.4), 0 8px 10px -6px rgba(192, 133, 125, 0.2)' 
+      }}
+    >
+      <img 
+        src="/logo.jpg" 
+        alt="Logo Método PF"
+        // 'object-cover' asegura que llene todo el círculo (recortando bordes si es necesario)
+        // 'block' elimina espacios fantasma inline
+        className="w-full h-full object-cover block" 
+      />
     </div>
-
   );
-
 };
-
 
 
 const SimplePieChart = ({ data, size = 160 }) => {
