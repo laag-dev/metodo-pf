@@ -12,11 +12,14 @@ import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot, writeBatch, 
 
 // 1. CONFIGURACIÓN E INICIALIZACIÓN
 
-// ==========================================
-
-
-
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+const firebaseConfig = {
+  apiKey: "AIzaSyBvMEE3mfEFSFwhnFZwjdM_gtWnedH6KoM",
+  authDomain: "metodo-pf.firebaseapp.com",
+  projectId: "metodo-pf",
+  storageBucket: "metodo-pf.firebasestorage.app",
+  messagingSenderId: "1044522703006",
+  appId: "1:1044522703006:web:55939a76f3f73d38e7838f"
+};
 
 const app = initializeApp(firebaseConfig);
 
